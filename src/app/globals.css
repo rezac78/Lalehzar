@@ -4,4 +4,16 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: #FFF8E1;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+background: #FFF8E1;
+}
+
+::-webkit-scrollbar-thumb {
+background: #D3B88C;
 }
