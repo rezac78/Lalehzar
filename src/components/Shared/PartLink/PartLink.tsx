@@ -6,10 +6,11 @@ interface LinkProps {
         children?: React.ReactNode;
         target?: string;
         IdName?: string;
+        Click?: () => void;
 }
 export default function PartLink(props: LinkProps) {
         return (
-                <Link aria-label={props.IdName} target={props.target ? "_blank" : undefined} className={props.className} href={props.Href}>
+                <Link aria-label={props.IdName} onClick={props.Click} target={props.target ? "_blank" : undefined} className={props.className} href={props.Href}>
                         {props.children}
                 </Link>
         );
