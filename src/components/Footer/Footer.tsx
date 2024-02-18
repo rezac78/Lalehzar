@@ -4,7 +4,7 @@ import PartWeek from "../Shared/PartWeek/PartWeek";
 
 export default function Footer() {
         return (
-                <footer className="w-full bg-Navbar text-white p-8">
+                <footer className="w-full bg-navbarFooterColor text-white p-2 sm:p-8">
                         <div className="flex flex-wrap justify-between items-start">
                                 <PartMap />
                                 <PartAddress />

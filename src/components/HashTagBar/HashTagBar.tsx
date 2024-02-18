@@ -6,7 +6,7 @@ import PartLink from '../Shared/PartLink/PartLink';
 export default function HashTagBar() {
         const scrollContainer = useRef<HTMLDivElement>(null);
         const [isScrollable, setIsScrollable] = useState(false);
-        const [selectedHashtag, setSelectedHashtag] = useState<string>('پرطرفدار');
+        const [selectedHashtag, setSelectedHashtag] = useState<string>();
         useEffect(() => {
                 const checkScrollability = () => {
                         if (scrollContainer.current) {
@@ -41,7 +41,7 @@ export default function HashTagBar() {
                         <div className="flex w-10/12 md:w-11/12 m-auto items-center justify-center my-10 relative">
                                 <div className="flex flex-nowrap overflow-x-auto space-x-2 scrollbar-hide" ref={scrollContainer} style={{ scrollBehavior: 'smooth' }}>
                                         {hashtags.map((hashtag) => (
-                                                <PartLink key={hashtag} Href={`#${hashtag}`} Click={() => handleHashtagClick(hashtag)} className={`px-4 py-2 text-black rounded-full transition duration-300 ease-in-out whitespace-nowrap ${selectedHashtag === hashtag ? 'text-Highlights' : 'hover:bg-opacity-80'}`}>
+                                                <PartLink key={hashtag} Href={`#${hashtag}`} Click={() => handleHashtagClick(hashtag)} className={`px-4 py-2 text-titleColor rounded-full transition duration-300 ease-in-out whitespace-nowrap ${selectedHashtag === hashtag ? 'text-textColor' : 'hover:bg-opacity-80'}`}>
                                                         {hashtag}
                                                 </PartLink>
                                         ))}

@@ -9,12 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        backgroundColor: "#FFF8E1",
-        Navbar: "#6F4E37",
-        Buttons: "#C68E17",
+        backgroundColor: "#F5F5DC",
+        textColor: "#6F4E37",
+        linkColor: "#D4AF37",
+        titleColor: "#3B2F2F",
+        navbarFooterColor: "#483C32",
+        cardBackgroundColor: "#D3D3D3",
+        buttonColor: "#800020",
+        buttonHoverColor: "#D4AF37",
         ButtonHover: "#E0AC69",
-        Text: "#4B2E2E",
-        Highlights: "#D3B88C",
       },
     },
   },

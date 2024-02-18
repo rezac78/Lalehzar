@@ -42,16 +42,16 @@ export default function CartSections() {
                 return products
                         .filter(product => product.hashTag.includes(hashtag))
                         .map(product => (
-                                <div key={product.id} className="flex flex-wrap w-11/12 md:w-2/5 xl:w-[30%] bg-white shadow-lg rounded-lg overflow-hidden">
+                                <div key={product.id} className="flex flex-wrap w-11/12 md:w-2/5 xl:w-[30%] bg-cardBackgroundColor shadow-lg rounded-lg overflow-hidden">
                                         <PartImage src={product.imageUrl} className="w-1/3 md:w-1/3" width={500} height={500} />
                                         <div className="w-2/3 p-4 flex flex-col justify-between">
                                                 <div>
-                                                        <h2 className="text-lg font-bold">{product.name}</h2>
-                                                        <p className="text-sm text-gray-600">{product.description}</p>
+                                                        <h2 className="text-lg font-bold text-titleColor">{product.name}</h2>
+                                                        <p className="text-sm text-textColor">{product.description}</p>
                                                 </div>
                                                 <div className="flex justify-between items-end mt-4">
-                                                        <span className="text-lg font-bold">{product.price}</span>
-                                                        <PartButton className="text-Text bg-Buttons hover:bg-ButtonHover rounded-full p-2">
+                                                        <span className="text-lg font-bold text-textColor">{product.price}</span>
+                                                        <PartButton className="text-white bg-buttonColor hover:bg-buttonHoverColor rounded-full p-2">
                                                                 <PlusIcon className="h-5 w-5" />
                                                         </PartButton>
                                                 </div>
@@ -63,7 +63,7 @@ export default function CartSections() {
                 <div className="my-10">
                         {hashtags.map(hashtag => (
                                 <div className="my-10" key={hashtag}>
-                                        <h2 className="text-xl font-bold my-4 mx-5 sm:mx-10 text-Highlights">{hashtag}</h2>
+                                        <h2 className="text-xl font-bold my-4 mx-5 sm:mx-10 text-titleColor">{hashtag}</h2>
                                         <div className="flex flex-wrap justify-center gap-4">
                                                 {renderProductsByHashtag(hashtag)}
                                         </div>
