@@ -17,3 +17,11 @@ background: #FFF8E1;
 ::-webkit-scrollbar-thumb {
 background: #D3B88C;
 }
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
+}
