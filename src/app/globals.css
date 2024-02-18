@@ -24,4 +24,5 @@ background: #D3B88C;
 .scrollbar-hide {
   -ms-overflow-style: none;  
   scrollbar-width: none; 
+  scroll-behavior: auto;
 }

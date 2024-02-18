@@ -62,7 +62,7 @@ export default function CartSections() {
         return (
                 <div className="my-10">
                         {hashtags.map(hashtag => (
-                                <div className="my-10" key={hashtag}>
+                                <div className="my-10" id={hashtag} key={hashtag}>
                                         <h2 className="text-xl font-bold my-4 mx-5 sm:mx-10 text-titleColor">{hashtag}</h2>
                                         <div className="flex flex-wrap justify-center gap-4">
                                                 {renderProductsByHashtag(hashtag)}
