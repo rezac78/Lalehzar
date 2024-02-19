@@ -3,7 +3,7 @@ export default function LoadingPage() {
                 <div className="flex items-center justify-center h-screen bg-gray-800 text-white">
                         <div className="flex flex-col items-center">
                                 <div className="loader mb-4"></div>
-                                <span className="text-sm font-mono">Loading...</span>
+                                <span className="text-sm font-mono">صبر کنید...</span>
                         </div>
 
                         <style jsx>{`

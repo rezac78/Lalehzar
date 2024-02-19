@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
     "@hookform/resolvers": "^3.3.4",
+    "@zeit/next-source-maps": "^0.0.3",
     "axios": "^1.6.7",
     "jwt-decode": "^4.0.0",
     "next": "14.1.0",

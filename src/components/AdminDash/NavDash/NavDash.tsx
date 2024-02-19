@@ -20,7 +20,7 @@ export default function NavDash({ open }: NavDashProps) {
                                 <div className="flex items-center">
                                         <div className="flex-shrink-0">
                                                 <PartLink Href={"/"}>
-                                                        <PartImage src="/Logo1.png" className="w-full" width={60} height={80} />
+                                                        <PartImage src="/Logo.png" className="w-full" width={60} height={80} />
                                                 </PartLink>
                                         </div>
                                         <div className="hidden md:block">

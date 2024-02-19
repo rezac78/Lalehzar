@@ -8,6 +8,16 @@ export interface Week {
   name: string;
   time: string;
 }
+export interface InputForm {
+  id: number;
+  IdName: string;
+  LabelName: string;
+  type: string;
+}
+export interface TableHead {
+  id: number;
+  Title: string;
+}
 export interface InputLogin {
   id: number;
   IdName: string;
@@ -48,8 +58,53 @@ export const InputLogin: InputLogin[] = [
   },
 ];
 export const navigation: Navigation[] = [
-  { id: 1, name: "Dashboard", href: "/admin/dashboard" },
-  { id: 2, name: "Course", href: "/admin/course" },
-  { id: 3, name: "Blog", href: "/admin/blog" },
-  { id: 4, name: "Settings", href: "/admin/settings" },
+  { id: 1, name: "داشبورد", href: "/admin/dashboard" },
+  { id: 4, name: "تنظیمات", href: "/admin/settings" },
+];
+export const TableHead: TableHead[] = [
+  {
+    id: 1,
+    Title: "عکس",
+  },
+  {
+    id: 2,
+    Title: "اسم",
+  },
+  {
+    id: 3,
+    Title: "توضیحات",
+  },
+  {
+    id: 4,
+    Title: "هشتگ",
+  },
+  {
+    id: 5,
+    Title: "موجود بودن",
+  },
+  {
+    id: 13,
+    Title: "ابزار",
+  },
+];
+export const InputForm: InputForm[] = [
+  {
+    id: 1,
+    IdName: "photo",
+    LabelName: "عکس",
+    type: "url",
+  },
+  {
+    id: 2,
+    IdName: "title",
+    LabelName: "اسم",
+    type: "text",
+  },
+  {
+    id: 3,
+    IdName: "description",
+    LabelName: "توضیحات",
+    type: "text",
+  },
+
 ];

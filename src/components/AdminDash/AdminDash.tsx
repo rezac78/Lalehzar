@@ -1,7 +1,12 @@
-import { Disclosure} from '@headlessui/react'
+import { Disclosure } from '@headlessui/react'
 import NavDash from './NavDash/NavDash'
 import HeaderDash from './HeaderDash/HeaderDash'
-export default function AdminDash() {
+import DashboardMenu from './Dashboard/Dashboard'
+import { Menu } from '../../types/auth';
+interface AdminMenuProps {
+        MenusData: Menu[];
+}
+export default function AdminDash({ MenusData }: AdminMenuProps) {
         return (
                 <>
                         <div className="min-h-full">
@@ -9,16 +14,18 @@ export default function AdminDash() {
                                         {({ open }) => (
                                                 <>
                                                         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                                                                <NavDash open={open}/>
+                                                                <NavDash open={open} />
                                                         </div>
 
-                                                        
+
                                                 </>
                                         )}
                                 </Disclosure>
-                                <HeaderDash Type="home" HeadTitle="Dashboard" HeadLink="/"/>
+                                <HeaderDash Type="create" HeadTitle="داشبورد" HeadLink="/admin/add-menu" />
                                 <main>
-                                        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">reza</div>
+                                        <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
+                                                <DashboardMenu initialCoursesData={MenusData} />
+                                        </div>
                                 </main>
                         </div>
                 </>

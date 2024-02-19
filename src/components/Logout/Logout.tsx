@@ -17,7 +17,7 @@ export default function Logout(props: LogoutPartProps) {
                         props.Message(true);
                         setTimeout(() => {
                                 props.Message(false);
-                                router.push('/login');
+                                router.push('/');
                         }, 3000);
                 } catch (error) {
                         console.error('Logout failed:', error);

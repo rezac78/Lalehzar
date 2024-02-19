@@ -3,7 +3,7 @@ interface ButtonProps {
         className?: string;
         children?: React.ReactNode;
         IdName?: string;
-        Click?: () => void;
+        Click?: () => void| undefined;
 }
 export default function PartButton(props: ButtonProps) {
         return (
