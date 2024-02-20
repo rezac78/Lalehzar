@@ -11,10 +11,10 @@ export default function CartSections(props: CartSectionsProps) {
                 return props.Data
                         .filter(product => product.hashtags.includes(hashtag))
                         .map(product => (
-                                <div key={product._id} className="flex flex-wrap w-11/12 sm:w-8/12 md:w-2/5 xl:w-[30%] bg-cardBackgroundColor shadow-lg rounded-lg overflow-hidden">
+                                <div key={product._id} className="flex flex-wrap w-11/12 sm:w-9/12 md:w-2/5 xl:w-[30%] bg-cardBackgroundColor shadow-lg rounded-lg overflow-hidden">
                                         <div className="w-1/3 flex justify-center">
                                                 <div className="aspect-w-1 aspect-h-1 w-full relative">
-                                                        <PartImage src={product.photo} className="absolute w-11/12 h-full" width={800} height={500} />
+                                                        <PartImage src={product.photo} className="absolute w-full sm:w-9/12 h-full" width={800} height={500} />
                                                 </div>
                                         </div>
                                         <div className="w-2/3 p-4 flex flex-col justify-between">
