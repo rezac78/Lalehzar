@@ -76,14 +76,18 @@ export const TableHead: TableHead[] = [
   },
   {
     id: 4,
-    Title: "هشتگ",
+    Title: "قیمت",
   },
   {
     id: 5,
+    Title: "هشتگ",
+  },
+  {
+    id: 6,
     Title: "موجود بودن",
   },
   {
-    id: 13,
+    id: 7,
     Title: "ابزار",
   },
 ];
@@ -106,5 +110,10 @@ export const InputForm: InputForm[] = [
     LabelName: "توضیحات",
     type: "text",
   },
-
+  {
+    id: 4,
+    IdName: "price",
+    LabelName: "قیمت",
+    type: "text",
+  },
 ];

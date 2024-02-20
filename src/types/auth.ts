@@ -7,6 +7,11 @@ export interface Menu {
   photo: string;
   title: string;
   description: string;
+  price:string;
   hashtags: [string];
   available: boolean;
+}
+export interface Hashtag {
+  _id: string;
+  hashtag: string;
 }

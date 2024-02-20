@@ -11,6 +11,7 @@ export const menuSchema = Yup.object().shape({
     .required("مقداری وارد نشده"),
   title: Yup.string().required("مقداری وارد نشده بود"),
   description: Yup.string().required("مقداری وارد نشد"),
+  price: Yup.string().required("مقداری وارد نشد"),
   available: Yup.boolean()
     .default(true)
     .required("Product availability is required"),

@@ -6,7 +6,7 @@ interface LinkProps {
         children?: React.ReactNode;
         target?: string;
         IdName?: string;
-        Click?: () => void;
+        Click?: any;
 }
 export default function PartLink(props: LinkProps) {
         return (
