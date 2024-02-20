@@ -1,6 +1,4 @@
-import { PlusIcon } from '@heroicons/react/24/solid';
 import PartImage from '../Shared/PartImag/PartImage';
-import PartButton from '../Shared/PartButton/PartButton';
 import { Menu, Hashtag } from '@/types/auth';
 interface CartSectionsProps {
         Data: Menu[];
@@ -24,9 +22,11 @@ export default function CartSections(props: CartSectionsProps) {
                                                 </div>
                                                 <div className="flex justify-between items-end mt-4">
                                                         <span className="text-lg font-bold text-textColor">{product.price}</span>
-                                                        <PartButton className="text-white bg-buttonColor hover:bg-buttonHoverColor rounded-full p-2">
-                                                                <PlusIcon className="h-5 w-5" />
-                                                        </PartButton>
+                                                        {product.available ? (
+                                                                <div className="text-green-600">موجود</div>
+                                                        ) : (
+                                                                <div className="text-red-600">اتمام موجودی</div>
+                                                        )}
                                                 </div>
                                         </div>
                                 </div>

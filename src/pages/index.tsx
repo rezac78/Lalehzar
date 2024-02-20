@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import { HashtagAllData, MenuAllData } from "@/services/MenuService";
 import { Menu, Hashtag } from "@/types/auth";
+import { GetServerSidePropsContext } from "next";
 interface MenuProps {
   menuData: Menu[];
   hashtagData: Hashtag[]
@@ -22,8 +23,21 @@ export default function Home(props: MenuProps) {
     </div>
   );
 }
-export const getServerSideProps = async () => {
-  const menuData = await MenuAllData();
-  const hashtagData = await HashtagAllData();
-  return { props: { menuData: menuData.data, hashtagData: hashtagData.data } };
+export const getServerSideProps = async (context: GetServerSidePropsContext) => {
+  try {
+    const menuData = await MenuAllData();
+    const hashtagData = await HashtagAllData();
+    if (!menuData) {
+      throw new Error('Failed to fetch courses data');
+    }
+    return { props: { menuData: menuData.data, hashtagData: hashtagData.data } };
+  } catch (error) {
+    const originalUrl = context.resolvedUrl;
+    return {
+      redirect: {
+        destination: `/500?redirect=${encodeURIComponent(originalUrl)}`,
+        permanent: false,
+      },
+    };
+  }
 };
