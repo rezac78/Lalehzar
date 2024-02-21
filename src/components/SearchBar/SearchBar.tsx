@@ -15,7 +15,6 @@ export default function SearchBar(props: SearchProps) {
                 router.push(route);
         }, 500);
         useEffect(() => {
-                console.log('Search term:', searchTerm);
                 handleSearch();
                 return () => {
                         handleSearch.cancel();

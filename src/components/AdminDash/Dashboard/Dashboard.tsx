@@ -34,7 +34,7 @@ export default function DashboardMenu({ initialMenuData }: DashboardProps) {
                 setTimeout(() => setShowSuccessMessage(false), 5000);
         };
         return (
-                <div className="overflow-x-auto">
+                <div className="overflow-x-auto w-11/12	m-auto sm:w-full">
                         {showSuccessMessage && <Alerts Message={SuccessMessage} type={numberSuccessMessage} />}
                         <Table data={MenusData} onItemDelete={deleteCourse} />
                 </div>

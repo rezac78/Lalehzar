@@ -6,7 +6,6 @@ import { MenuAllData } from "@/services/MenuService";
 import { GetServerSidePropsContext } from "next";
 import { SearchMenu } from "@/services/SearchService";
 export default function AdminDashboard({ MenuData }: { MenuData: Menu[] }) {
-        console.log('Fetched Menu Data:', MenuData);
         const { loading } = useAccess();
         if (loading) {
                 return <LoadingPage />;

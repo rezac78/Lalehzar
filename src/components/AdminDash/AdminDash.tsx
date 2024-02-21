@@ -8,7 +8,6 @@ interface AdminMenuProps {
         MenusData: Menu[];
 }
 export default function AdminDash({ MenusData }: AdminMenuProps) {
-        console.log('AdminDash MenusData:', MenusData);
         return (
                 <>
                         <div className="min-h-full">

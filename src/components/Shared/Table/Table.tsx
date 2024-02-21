@@ -16,7 +16,6 @@ export default function Table({ data, onItemDelete }: TableProps) {
                 );
         }
         const renderCoursesTable = () => (
-                console.log('Rendering table with data:', data),
                 <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-200">
                                 <tr>
