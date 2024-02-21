@@ -1,9 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/solid';
 import { useEffect, useRef, useState } from 'react';
 import PartButton from '../Shared/PartButton/PartButton';
-import PartLink from '../Shared/PartLink/PartLink';
 import { Hashtag } from '@/types/auth';
-import Link from 'next/link';
 import useSmoothScroll from '@/hooks/useSmoothScroll';
 interface HashTagBarProps {
         Hashtag: Hashtag[];

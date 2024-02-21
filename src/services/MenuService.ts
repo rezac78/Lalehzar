@@ -61,7 +61,7 @@ export const MenuData = async (
 export const HashtagAllData = async () => {
   try {
     const response = await axios.get("/menu/hashtag");
-    return response.data;
+    return response.data.data;
   } catch (error: any) {
     return error.response;
   }
