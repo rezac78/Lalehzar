@@ -1,4 +1,4 @@
-import { UserIcon, Bars3Icon } from '@heroicons/react/24/solid'
+import { PuzzlePieceIcon, Bars3Icon } from '@heroicons/react/24/solid'
 import PartImage from '../Shared/PartImag/PartImage';
 import PartLink from '../Shared/PartLink/PartLink';
 import PartButton from '../Shared/PartButton/PartButton';
@@ -12,18 +12,19 @@ export default function Navbar() {
                                 <div className="flex justify-between">
                                         <div className="flex space-x-7">
                                                 <div>
-                                                        <PartLink Href={'#'} className="flex items-center py-4">
+                                                        <PartLink Href={'/'} className="flex items-center py-4">
                                                                 <PartImage src="/Logo.png" width={75} height={75} />
                                                                 <span className="font-semibold text-linkColor text-lg px-2">لاله زار</span>
                                                         </PartLink>
                                                 </div>
                                                 <div className="hidden md:flex items-center space-x-1">
-                                                        <PartLink Href={'#'} className="py-4 px-2 text-linkColor hover:text-ButtonHover font-semibold">درباره ما</PartLink>
+                                                        <PartLink Href={'/aboutus'} className="py-4 px-2 text-linkColor hover:text-ButtonHover font-semibold">درباره ما</PartLink>
+                                                        <PartLink Href={'/contactus'} className="py-4 px-2 text-linkColor hover:text-ButtonHover font-semibold">ارتباط با ما</PartLink>
                                                 </div>
                                         </div>
                                         <div className="hidden md:flex items-center space-x-3 ">
                                                 <PartLink Href={'#'} className="py-2 px-2 flex items-center">
-                                                        <UserIcon className="h-5 w-5 text-linkColor hover:text-ButtonHover" />
+                                                        <PuzzlePieceIcon className="h-5 w-5 text-linkColor hover:text-ButtonHover" />
                                                 </PartLink>
                                         </div>
                                         <div className="md:hidden flex items-center">

@@ -5,10 +5,14 @@ export const loginValidationSchema = Yup.object().shape({
   password: Yup.string().required("رمز عبور خالی است"),
 });
 
+export const ContactValidationSchema = Yup.object().shape({
+  name: Yup.string().required("نام خالی است"),
+  email: Yup.string().email("ایمیل معتبر نیست").required("ایمیل خالی است"),
+  message: Yup.string().required("پیام خالی است"),
+});
+
 export const menuSchema = Yup.object().shape({
-  photo: Yup.string()
-    .url("URL معتبر نیست")
-    .required("مقداری وارد نشده"),
+  photo: Yup.string().url("URL معتبر نیست").required("مقداری وارد نشده"),
   title: Yup.string().required("مقداری وارد نشده بود"),
   description: Yup.string().required("مقداری وارد نشد"),
   price: Yup.string().required("مقداری وارد نشد"),
