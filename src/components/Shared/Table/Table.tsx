@@ -5,10 +5,9 @@ import { PencilIcon, CheckCircleIcon, MinusCircleIcon } from "@heroicons/react/2
 import PartLink from "../PartLink/PartLink";
 interface TableProps {
         data: Menu[];
-        type: 'course' | 'blog';
         onItemDelete: (itemId: string) => void;
 }
-export default function Table({ data, type, onItemDelete }: TableProps) {
+export default function Table({ data, onItemDelete }: TableProps) {
         if (data.length === 0) {
                 return (
                         <div className="text-center my-4">
@@ -17,6 +16,7 @@ export default function Table({ data, type, onItemDelete }: TableProps) {
                 );
         }
         const renderCoursesTable = () => (
+                console.log('Rendering table with data:', data),
                 <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-200">
                                 <tr>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Table from '@/components/Shared/Table/Table';
 import { Menu } from '../../../types/auth';
 import { MenuDeletedData } from '@/services/MenuService';
@@ -6,19 +6,22 @@ import Alerts from '@/components/Shared/Alert/Alert';
 
 
 interface DashboardProps {
-        initialCoursesData: Menu[];
+        initialMenuData: Menu[];
 }
 
-export default function DashboardMenu({ initialCoursesData }: DashboardProps) {
-        const [coursesData, setCoursesData] = useState<Menu[]>(initialCoursesData);
+export default function DashboardMenu({ initialMenuData }: DashboardProps) {
+        const [MenusData, setMenusData] = useState<Menu[]>(initialMenuData);
         const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
         const [numberSuccessMessage, setNumberSuccessMessage] = useState<boolean>();
         const [SuccessMessage, setSuccessMessage] = useState<string>();
         const token = localStorage.getItem("token");
+        useEffect(() => {
+                setMenusData(initialMenuData);
+        }, [initialMenuData]);
         const deleteCourse = async (MenuId: string) => {
                 try {
                         const response = await MenuDeletedData(MenuId, token);
-                        setCoursesData(coursesData.filter(menu => menu._id !== MenuId));
+                        setMenusData(MenusData.filter(menu => menu._id !== MenuId));
                         setShowSuccessMessage(true);
                         setNumberSuccessMessage(response.success);
                         setSuccessMessage(response.message || 'Menu deleted successfully');
@@ -33,7 +36,7 @@ export default function DashboardMenu({ initialCoursesData }: DashboardProps) {
         return (
                 <div className="overflow-x-auto">
                         {showSuccessMessage && <Alerts Message={SuccessMessage} type={numberSuccessMessage} />}
-                        <Table type="course" data={coursesData} onItemDelete={deleteCourse}/>
+                        <Table data={MenusData} onItemDelete={deleteCourse} />
                 </div>
         );
 }

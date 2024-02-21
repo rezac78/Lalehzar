@@ -4,17 +4,18 @@ import PartButton from '../Shared/PartButton/PartButton';
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
 import { debounce } from 'lodash';
-export default function SearchBar() {
+interface SearchProps {
+        baseUrl: '/' | '/admin/dashboard';
+}
+export default function SearchBar(props: SearchProps) {
         const [searchTerm, setSearchTerm] = useState('');
         const router = useRouter();
         const handleSearch = debounce(() => {
-                if (!searchTerm.trim()) {
-                        router.push(`/`);
-                } else {
-                        router.push(`/?term=${encodeURIComponent(searchTerm)}`);
-                };
+                const route = searchTerm.trim() ? `${props.baseUrl}?term=${encodeURIComponent(searchTerm)}` : `${props.baseUrl}`;
+                router.push(route);
         }, 500);
         useEffect(() => {
+                console.log('Search term:', searchTerm);
                 handleSearch();
                 return () => {
                         handleSearch.cancel();

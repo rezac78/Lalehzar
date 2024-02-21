@@ -18,7 +18,7 @@ export default function Home(props: MenuProps) {
     <div className="">
       <Navbar />
       <BigLogo />
-      <SearchBar />
+      <SearchBar baseUrl="/" />
       <HashTagBar Hashtag={props.hashtagData} />
       {props.wasSearched && props.menuData.length === 0 ? (
         <div className="text-center text-titleColor mb-40">
