@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import BigLogo from "@/components/BigLogo/BigLogo";
 import CartSections from "@/components/CartSections/CartSections";
 import Footer from "@/components/Footer/Footer";
@@ -8,12 +9,23 @@ import { HashtagAllData, MenuAllData } from "@/services/MenuService";
 import { SearchMenu } from "@/services/SearchService";
 import { Menu, Hashtag } from "@/types/auth";
 import { GetServerSidePropsContext } from "next";
+import LoadingPage from '@/components/Shared/Loading/Loading';
 interface MenuProps {
   menuData: Menu[];
   hashtagData: Hashtag[];
   wasSearched: boolean;
 }
 export default function Home(props: MenuProps) {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+  if (isLoading) {
+    return <LoadingPage />;
+  }
   return (
     <div className="">
       <Navbar />
