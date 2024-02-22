@@ -11,8 +11,11 @@ export default function SearchBar(props: SearchProps) {
         const [searchTerm, setSearchTerm] = useState('');
         const router = useRouter();
         const handleSearch = debounce(() => {
-                const route = searchTerm.trim() ? `${props.baseUrl}?term=${encodeURIComponent(searchTerm)}` : `${props.baseUrl}`;
-                router.push(route);
+                if (!searchTerm.trim()) {
+                        router.push(`/`);
+                } else {
+                        router.push(`/?term=${encodeURIComponent(searchTerm)}`);
+                };
         }, 500);
         useEffect(() => {
                 handleSearch();

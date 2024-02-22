@@ -30,7 +30,7 @@ export interface Navigation {
   href: string;
 }
 export const navbar: Navbar[] = [
-  { id: 1, name: "درباره ما", Link: "/aboutus'" },
+  { id: 1, name: "درباره ما", Link: "/aboutus" },
   { id: 2, name: "ارتباط با ما", Link: "/contactus" },
   { id: 3, name: "سرگرمی", Link: "#" },
 ];
