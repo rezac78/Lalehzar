@@ -4,14 +4,22 @@ import PartButton from '../Shared/PartButton/PartButton';
 import { Hashtag } from '@/types/auth';
 import useSmoothScroll from '@/hooks/useSmoothScroll';
 interface HashTagBarProps {
-        Hashtag: Hashtag[];
+        Hashtag?: Hashtag[];
 }
 export default function HashTagBar(props: HashTagBarProps) {
         const scrollContainer = useRef<HTMLDivElement>(null);
         const [isScrollable, setIsScrollable] = useState(false);
+        const [isSticky, setIsSticky] = useState(false);
         const [selectedHashtag, setSelectedHashtag] = useState("پرطرفدارها");
         const scrollToElement = useSmoothScroll();
         useEffect(() => {
+                const threshold = 200;
+                const handleScroll = () => {
+                        const scrollPosition = window.scrollY >= threshold;
+                        setIsSticky(scrollPosition);
+                };
+
+                window.addEventListener('scroll', handleScroll);
                 const checkScrollability = () => {
                         if (scrollContainer.current) {
                                 const { scrollWidth, clientWidth } = scrollContainer.current;
@@ -26,7 +34,10 @@ export default function HashTagBar(props: HashTagBarProps) {
                 }
                 window.addEventListener('resize', checkScrollability);
 
-                return () => window.removeEventListener('resize', checkScrollability);
+                return () => {
+                        window.removeEventListener('resize', checkScrollability);
+                        window.removeEventListener('scroll', handleScroll);
+                }
         }, []);
         const scroll = (direction: 'left' | 'right') => {
                 if (scrollContainer.current) {
@@ -39,7 +50,7 @@ export default function HashTagBar(props: HashTagBarProps) {
                 scrollToElement(hashtag, 0, 1000);
         };
         return (
-                <div className="flex w-full md:w-10/12 m-auto items-center justify-center my-10 relative">
+                <div className={`flex w-full md:w-10/12 m-auto items-center justify-center my-10 relative ${isSticky ? 'sticky top-0 bg-backgroundColor w-full md:w-full z-50' : ''}`}>
                         {isScrollable && (
                                 <PartButton Click={() => scroll('left')} className="absolute left-0 z-10">
                                         <ChevronLeftIcon className="h-8 w-8 text-black" />
@@ -47,7 +58,7 @@ export default function HashTagBar(props: HashTagBarProps) {
                         )}
                         <div className="flex w-10/12 md:w-11/12 m-auto items-center justify-center my-10 relative">
                                 <div className="flex flex-nowrap overflow-x-auto space-x-2 scrollbar-hide" ref={scrollContainer} style={{ scrollBehavior: 'smooth' }}>
-                                        {props.Hashtag.map((hashtag) => (
+                                        {props.Hashtag?.map((hashtag) => (
                                                 <div key={hashtag._id} onClick={() => handleHashtagClick(hashtag.hashtag)} className="cursor-pointer">
                                                         <span className={`px-4 py-2 rounded-full transition duration-300 ease-in-out whitespace-nowrap ${selectedHashtag === hashtag.hashtag ? 'text-linkColor' : 'text-titleColor'}`}>
                                                                 {hashtag.hashtag}

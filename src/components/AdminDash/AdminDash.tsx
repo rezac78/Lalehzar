@@ -4,10 +4,12 @@ import HeaderDash from './HeaderDash/HeaderDash'
 import DashboardMenu from './Dashboard/Dashboard'
 import { Menu } from '../../types/auth';
 import SearchBar from '../SearchBar/SearchBar';
+import useSearch from '@/hooks/useSearch';
 interface AdminMenuProps {
         MenusData: Menu[];
 }
 export default function AdminDash({ MenusData }: AdminMenuProps) {
+        const { searchTerm, setSearchTerm,filteredData } = useSearch({ menuData: MenusData });
         return (
                 <>
                         <div className="min-h-full">
@@ -26,9 +28,9 @@ export default function AdminDash({ MenusData }: AdminMenuProps) {
                                 <main>
                                         <div className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
                                                 <div className="my-10">
-                                                        <SearchBar baseUrl="/admin/dashboard" />
+                                                        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                                                 </div>
-                                                <DashboardMenu initialMenuData={MenusData} />
+                                                <DashboardMenu initialMenuData={filteredData} />
                                         </div>
                                 </main>
                         </div>

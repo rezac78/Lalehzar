@@ -2,7 +2,7 @@ import PartImage from '../Shared/PartImag/PartImage';
 import { Menu, Hashtag } from '@/types/auth';
 interface CartSectionsProps {
         Data: Menu[];
-        Hashtag: Hashtag[];
+        Hashtag?: Hashtag[];
 }
 export default function CartSections(props: CartSectionsProps) {
         const formatPrice = (price: string) => {
@@ -40,7 +40,7 @@ export default function CartSections(props: CartSectionsProps) {
         };
         return (
                 <div className="my-10">
-                        {props.Hashtag.map(hashtag => (
+                        {props.Hashtag?.map(hashtag => (
                                 <div className="my-10" id={hashtag.hashtag} key={hashtag._id}>
                                         <h2 className="text-xl font-bold my-4 mx-5 sm:mx-10 text-titleColor">{hashtag.hashtag}</h2>
                                         <div className="flex flex-wrap justify-center gap-4">

@@ -4,7 +4,6 @@ import useAccess from "@/hooks/useAccess";
 import { Menu } from '../../types/auth';
 import { MenuAllData } from "@/services/MenuService";
 import { GetServerSidePropsContext } from "next";
-import { SearchMenu } from "@/services/SearchService";
 export default function AdminDashboard({ MenuData }: { MenuData: Menu[] }) {
         const { loading } = useAccess();
         if (loading) {
@@ -13,14 +12,8 @@ export default function AdminDashboard({ MenuData }: { MenuData: Menu[] }) {
         return <AdminDash MenusData={MenuData} />
 };
 export const getServerSideProps = async (context: GetServerSidePropsContext) => {
-        const searchTerm = context.query.term;
         try {
-                let menusData;
-                if (searchTerm) {
-                        menusData = await SearchMenu(searchTerm);
-                } else {
-                        menusData = await MenuAllData();
-                }
+                const menusData = await MenuAllData();
                 if (!menusData) {
                         throw new Error('Failed to fetch menu data');
                 }
