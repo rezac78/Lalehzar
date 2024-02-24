@@ -25,3 +25,12 @@ export const menuSchema = Yup.object().shape({
     .min(1, "حداقل یکی وارد کنید")
     .max(2, "بیشتر از 2 مجاز نیستید"),
 });
+export const settingsSchema = Yup.object().shape({
+  password: Yup.string()
+    .required("رمز عبور خالی است")
+    .min(5, "رمز باید بیش از 5 حرف داشته باشد"),
+  repeatPassword: Yup.string().oneOf(
+    [Yup.ref("password"), null],
+    "رمز شبی یک دیگر نیستند"
+  ),
+});

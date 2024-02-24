@@ -136,3 +136,18 @@ export const InputContactus: InputLogin[] = [
     type: "email",
   },
 ];
+
+export const InputChangepass: InputLogin[] = [
+  {
+    id: 1,
+    IdName: "password",
+    LabelName: "رمز",
+    type: "text",
+  },
+  {
+    id: 2,
+    IdName: "repeatPassword",
+    LabelName: "تکرار رمز",
+    type: "password",
+  },
+];
