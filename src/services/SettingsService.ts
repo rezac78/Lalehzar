@@ -23,3 +23,14 @@ export const UpdateUserPass = async (userData: any, token: string | null) => {
     return { message: "Failed to data" };
   }
 };
+export const UpdateUserEmail = async (userData: any, token: string | null) => {
+  try {
+    const response = await axios.put(`/admin/updateEmail`, userData, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error data:", error);
+    return { message: "Failed to data" };
+  }
+};

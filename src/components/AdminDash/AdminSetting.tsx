@@ -4,6 +4,8 @@ import HeaderDash from './HeaderDash/HeaderDash';
 import ChangPassSetting from './ChangPassSetting/ChangPassSetting';
 import { useState } from 'react';
 import Alerts from '../Shared/Alert/Alert';
+import Divider from '../Shared/Divider/Divider';
+import ChangEmailSetting from './ChangEmailSetting/ChangEmailSetting';
 export default function AdminSetting({ Data }: any) {
         const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
         const [numberSuccessMessage, setNumberSuccessMessage] = useState<boolean>();
@@ -24,7 +26,10 @@ export default function AdminSetting({ Data }: any) {
                                 {showSuccessMessage && <Alerts Message={SuccessMessage} type={numberSuccessMessage} />}
                                 <main>
                                         <div className="mx-auto max-w-7xl py-6 px-2 sm:px-8 lg:px-8">
+                                                <Divider Message="تغیر رمز" />
                                                 <ChangPassSetting initialData={Data} Message={setShowSuccessMessage} SuccessMessage={setNumberSuccessMessage} Success={setSuccessMessage} />
+                                                <Divider Message="تغیر ایمیل" />
+                                                <ChangEmailSetting initialData={Data} Message={setShowSuccessMessage} SuccessMessage={setNumberSuccessMessage} Success={setSuccessMessage} />
                                         </div>
                                 </main>
                         </div>

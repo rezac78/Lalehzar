@@ -34,3 +34,6 @@ export const settingsSchema = Yup.object().shape({
     "رمز شبی یک دیگر نیستند"
   ),
 });
+export const settingsEmailSchema = Yup.object().shape({
+  email: Yup.string().email("ایمیل معتبر نیست").required("ایمیل خالی است"),
+});
