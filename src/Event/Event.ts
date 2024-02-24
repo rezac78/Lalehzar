@@ -65,30 +65,34 @@ export const navigation: Navigation[] = [
 export const TableHead: TableHead[] = [
   {
     id: 1,
-    Title: "عکس",
+    Title: "ردیف",
   },
   {
     id: 2,
-    Title: "اسم",
+    Title: "عکس",
   },
   {
     id: 3,
-    Title: "توضیحات",
+    Title: "اسم",
   },
   {
     id: 4,
-    Title: "قیمت",
+    Title: "توضیحات",
   },
   {
     id: 5,
-    Title: "هشتگ",
+    Title: "قیمت",
   },
   {
     id: 6,
-    Title: "موجود بودن",
+    Title: "هشتگ",
   },
   {
     id: 7,
+    Title: "موجود بودن",
+  },
+  {
+    id: 8,
     Title: "ابزار",
   },
 ];

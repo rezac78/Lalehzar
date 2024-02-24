@@ -5,33 +5,21 @@ export default function PartAboutUs() {
                                 <section className="text-center">
                                         <h1 className="text-4xl font-bold text-titleColor mb-4">داستان ما</h1>
                                         <p className="text-lg text-coffee-medium">
-                                                Welcome to <strong>Cafe Name</strong>, where every sip tells a story. Nestled in the heart of our beloved city,
-                                                our cafe is more than just a place to grab a coffee; it's a sanctuary for coffee lovers and a hub for community connections.
+                                                به کافه <strong>لاله زار</strong> خوش آمدید، جایی که هر جرعه قصه‌ای را روایت می‌کند. در قلب شهر ما قرار گرفته، کافه ما بیش از یک مکان برای نوشیدن قهوه است؛ یک پناهگاه برای دوست‌داران قهوه و مرکزی برای ارتباطات جامعه است.
                                         </p>
                                 </section>
 
                                 <section className="mt-12 text-center">
                                         <h2 className="text-3xl font-bold text-titleColor mb-4">قهوه ما</h2>
                                         <p className="text-lg text-coffee-medium">
-                                                Our journey begins with the bean. We meticulously source our coffee from small-scale farms around the world,
-                                                ensuring every cup is brewed to perfection. Our skilled baristas bring out the unique flavors of each bean, crafting
-                                                beverages that delight and inspire.
+                                                سفر ما از دانه قهوه آغاز می‌شود. ما با دقت قهوه خود را انتخاب می کنیم، تا اطمینان حاصل شود که هر فنجان به طور کامل دم‌آوری شده است. باریستای ماهر ما، طعم‌های منحصر به فرد هر دانه را بیرون می‌کشند، نوشیدنی‌هایی را خلق می‌کند که لذت بخش و هستند.
                                         </p>
                                 </section>
 
                                 <section className="mt-12 text-center">
                                         <h2 className="text-3xl font-bold text-titleColor mb-4">فضای ما</h2>
                                         <p className="text-lg text-coffee-medium">
-                                                Our cafe boasts a cozy interior that combines rustic charm with modern comfort. It's a space where creativity thrives,
-                                                conversations flow, and friendships bloom. Come join us and become a part of our story.
-                                        </p>
-                                </section>
-
-                                <section className="mt-12 text-center">
-                                        <h2 className="text-3xl font-bold text-titleColor mb-4">تعهد ما</h2>
-                                        <p className="text-lg text-coffee-medium">
-                                                Our cafe boasts a cozy interior that combines rustic charm with modern comfort. It's a space where creativity thrives,
-                                                conversations flow, and friendships bloom. Come join us and become a part of our story.
+                                                کافه ما دارای فضای داخلی دنجی است. اینجا فضایی است که خلاقیت در آن شکوفا می‌شود، گفتگوها جریان دارند و دوستی‌ها شکل می‌گیرند. به ما بپیوندید و بخشی از داستان ما شوید.
                                         </p>
                                 </section>
                         </main>

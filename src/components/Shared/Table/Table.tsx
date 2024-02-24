@@ -1,12 +1,14 @@
-import { TableHead } from "../../../Event/Event"
+import { TableHead } from "../../../Event/Event";
 import DeleteButton from "../ButtonDelete/ButtonDelete";
 import { Menu } from '../../../types/auth';
 import { PencilIcon, CheckCircleIcon, MinusCircleIcon } from "@heroicons/react/24/solid";
 import PartLink from "../PartLink/PartLink";
+
 interface TableProps {
         data: Menu[];
         onItemDelete: (itemId: string) => void;
 }
+
 export default function Table({ data, onItemDelete }: TableProps) {
         if (data.length === 0) {
                 return (
@@ -15,21 +17,23 @@ export default function Table({ data, onItemDelete }: TableProps) {
                         </div>
                 );
         }
+
         const renderCoursesTable = () => (
                 <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-200">
-                                <tr>
-                                        {TableHead.map((e, i) => (
-                                                <th key={e.Title} scope="col" className="px-6 py-3 text-right text-xs font-medium text-dark-gray uppercase">
-                                                        {e.Title}
-                                                </th>
-                                        ))}
-                                </tr>
+                                {TableHead.map((e) => (
+                                        <th key={e.id} scope="col" className="px-6 py-3 text-right text-xs font-medium text-dark-gray uppercase">
+                                                {e.Title}
+                                        </th>
+                                ))}
                         </thead>
                         <tbody className="bg-white divide-y divide-gray-200">
-                                {data.map((menu: any) => (
+                                {data.map((menu: any, index: number) => (
                                         <tr key={menu._id}>
-                                                {Object.keys(menu).map(key => {
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-dark-gray">
+                                                        {index + 1}
+                                                </td>
+                                                {Object.keys(menu).map((key) => {
                                                         if (key !== '_id' && key !== '__v') {
                                                                 return (
                                                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-dark-gray max-w-xs truncate">
@@ -54,5 +58,5 @@ export default function Table({ data, onItemDelete }: TableProps) {
                 <>
                         {renderCoursesTable()}
                 </>
-        )
+        );
 }
