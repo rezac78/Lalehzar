@@ -122,3 +122,17 @@ export const InputForm: InputForm[] = [
     type: "text",
   },
 ];
+export const InputContactus: InputLogin[] = [
+  {
+    id: 1,
+    IdName: "name",
+    LabelName: "نام",
+    type: "text",
+  },
+  {
+    id: 2,
+    IdName: "email",
+    LabelName: "ایمیل",
+    type: "email",
+  },
+];
