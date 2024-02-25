@@ -23,12 +23,12 @@ export default function Navbar() {
                                                 </div>
                                         </div>
                                         <div className="hidden md:flex items-center space-x-3 ">
-                                                <PartLink Href={'#'} className="py-2 px-2 flex items-center">
+                                                <PartLink  Href={'#'} className="py-2 px-2 flex items-center">
                                                         <PuzzlePieceIcon className="h-5 w-5 text-linkColor hover:text-ButtonHover" />
                                                 </PartLink>
                                         </div>
                                         <div className="md:hidden flex items-center">
-                                                <PartButton Click={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="outline-none mobile-menu-button">
+                                                <PartButton IdName={'Bars3Icon'} Click={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="outline-none mobile-menu-button">
                                                         <Bars3Icon className="h-7 w-7 text-linkColor hover:text-ButtonHover" />
                                                 </PartButton>
                                         </div>

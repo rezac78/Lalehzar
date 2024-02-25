@@ -52,7 +52,7 @@ export default function HashTagBar(props: HashTagBarProps) {
         return (
                 <div className={`flex w-full md:w-10/12 m-auto items-center justify-center my-10 relative ${isSticky ? 'sticky top-0 bg-backgroundColor w-full md:w-full z-50' : ''}`}>
                         {isScrollable && (
-                                <PartButton Click={() => scroll('left')} className="absolute left-0 z-10">
+                                <PartButton IdName={'ChevronLeftIcon'} Click={() => scroll('left')} className="absolute left-0 z-10">
                                         <ChevronLeftIcon className="h-8 w-8 text-black" />
                                 </PartButton>
                         )}
@@ -68,7 +68,7 @@ export default function HashTagBar(props: HashTagBarProps) {
                                 </div>
                         </div>
                         {isScrollable && (
-                                <PartButton Click={() => scroll('right')} className="absolute right-0 z-10">
+                                <PartButton IdName={'ChevronRightIcon'} Click={() => scroll('right')} className="absolute right-0 z-10">
                                         <ChevronRightIcon className="h-8 w-8 text-black" />
                                 </PartButton>
                         )}

@@ -2,7 +2,7 @@ import Document, { Html, Head, Main, NextScript } from 'next/document';
 class MyDocument extends Document {
         render() {
                 return (
-                        <Html dir="rtl">
+                        <Html lang="fa" dir="rtl">
                                 <Head>
                                         <title>کافه لاله زار</title>
                                         <meta name="description" content="بهترین طعم ها و خاطره ها" />
