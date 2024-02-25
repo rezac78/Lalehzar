@@ -20,7 +20,5 @@ export default function PartWeek({ WeekData }: PartWeekProps) {
                                 ))}
                         </div>
                 </div>
-
-
         );
 }

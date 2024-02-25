@@ -43,3 +43,14 @@ export const GetWeekDate = async () => {
     return { message: "Failed to data" };
   }
 };
+export const PutWeekDate = async (Data: any, token: string | null) => {
+  try {
+    const response = await axios.put(`/admin/opening-hours`, Data, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    return response.data;
+  } catch (error) {
+    console.error("Error data:", error);
+    return { message: "Failed to data" };
+  }
+};

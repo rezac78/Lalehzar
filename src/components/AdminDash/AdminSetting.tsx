@@ -6,7 +6,8 @@ import { useState } from 'react';
 import Alerts from '../Shared/Alert/Alert';
 import Divider from '../Shared/Divider/Divider';
 import ChangEmailSetting from './ChangEmailSetting/ChangEmailSetting';
-export default function AdminSetting({ Data }: any) {
+import WeekSetting from './weekSetting/weekSetting';
+export default function AdminSetting({ Data, WeekData }: any) {
         const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
         const [numberSuccessMessage, setNumberSuccessMessage] = useState<boolean>();
         const [SuccessMessage, setSuccessMessage] = useState<string>();
@@ -30,6 +31,8 @@ export default function AdminSetting({ Data }: any) {
                                                 <ChangPassSetting initialData={Data} Message={setShowSuccessMessage} SuccessMessage={setNumberSuccessMessage} Success={setSuccessMessage} />
                                                 <Divider Message="تغیر ایمیل" />
                                                 <ChangEmailSetting initialData={Data} Message={setShowSuccessMessage} SuccessMessage={setNumberSuccessMessage} Success={setSuccessMessage} />
+                                                <Divider Message="ساعت کاری" />
+                                                <WeekSetting initialData={WeekData} Message={setShowSuccessMessage} SuccessMessage={setNumberSuccessMessage} Success={setSuccessMessage} />
                                         </div>
                                 </main>
                         </div>
