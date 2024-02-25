@@ -24,6 +24,7 @@ export default function HashtagManager(props: HashtagManagerProps) {
                                 />
                                 <div className="mx-2">
                                         <button
+                                                aria-label="PlusCircleIcon"
                                                 type="button"
                                                 onClick={props.addHashtag}
                                                 className="flex items-center justify-center px-1 border-none rounded-full py-1 bg-blue-500 hover:bg-blue-700 text-white text-sm font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
@@ -34,9 +35,9 @@ export default function HashtagManager(props: HashtagManagerProps) {
                         </div>
                         <div className="flex flex-wrap gap-2 mt-1">
                                 {props.hashtags.map((hashtag, index) => (
-                                        <div key={index} className="flex items-center gap-2 bg-indigo-500 text-white px-3 py-1 rounded-full">
+                                        <div key={index} className="flex items-center gap-2 bg-indigo-600 text-white px-3 py-1 rounded-full">
                                                 {hashtag}
-                                                <PartButton Click={() => props.removeHashtag(hashtag)} className="text-white">&times;</PartButton>
+                                                <PartButton IdName="times" Click={() => props.removeHashtag(hashtag)} className="text-white">&times;</PartButton>
                                         </div>
                                 ))}
                         </div>

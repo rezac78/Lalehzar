@@ -9,7 +9,7 @@ interface AboutUsProps {
 }
 export default function AboutUs(props: AboutUsProps) {
         return (
-                <div className="">
+                <div>
                         <Navbar />
                         <PartAboutUs />
                         <Footer WeekData={props.WeekData} />

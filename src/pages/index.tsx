@@ -30,9 +30,8 @@ export default function Home(props: MenuProps) {
   if (isLoading) {
     return <LoadingPage />;
   }
-  console.log(props.WeekData)
   return (
-    <div className="">
+    <div>
       <Navbar />
       <BigLogo regularHours={props.WeekData.regularHours} />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />

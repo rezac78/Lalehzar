@@ -17,8 +17,7 @@ export default function Table({ data, onItemDelete }: TableProps) {
                         </div>
                 );
         }
-
-        const renderCoursesTable = () => (
+        return (
                 <table className="min-w-full divide-y divide-gray-200">
                         <thead className="bg-gray-200">
                                 {TableHead.map((e) => (
@@ -33,11 +32,13 @@ export default function Table({ data, onItemDelete }: TableProps) {
                                                 <td className="px-6 py-4 whitespace-nowrap text-sm text-dark-gray">
                                                         {index + 1}
                                                 </td>
-                                                {Object.keys(menu).map((key) => {
-                                                        if (key !== '_id' && key !== '__v') {
+                                                {Object.keys(menu).map((key, keyIndex) => {
+                                                        if (key !== '__v' && key !== '_id') {
                                                                 return (
-                                                                        <td className="px-6 py-4 whitespace-nowrap text-sm text-dark-gray max-w-xs truncate">
-                                                                                {menu[key] === true ? <CheckCircleIcon className="text-green-600" width={20} height={20} /> : menu[key] === false ? <MinusCircleIcon className="text-red-600" width={20} height={20} /> : menu[key]}
+                                                                        <td key={`${key}-${keyIndex}`} className="px-6 py-4 whitespace-nowrap text-sm text-dark-gray max-w-xs truncate">
+                                                                                {menu[key] === true ? <CheckCircleIcon className="text-green-600" width={20} height={20} /> :
+                                                                                        menu[key] === false ? <MinusCircleIcon className="text-red-600" width={20} height={20} /> :
+                                                                                                menu[key]}
                                                                         </td>
                                                                 );
                                                         }
@@ -53,10 +54,5 @@ export default function Table({ data, onItemDelete }: TableProps) {
                                 ))}
                         </tbody>
                 </table>
-        );
-        return (
-                <>
-                        {renderCoursesTable()}
-                </>
         );
 }

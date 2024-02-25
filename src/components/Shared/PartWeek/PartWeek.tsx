@@ -13,7 +13,7 @@ export default function PartWeek({ WeekData }: PartWeekProps) {
                                 {WeekData.regularHours.map((day, index) => (
                                         <div key={index} className="flex justify-between items-center text-textColor w-full px-3 md:px-1 lg:px-3 py-1 bg-cardBackgroundColor rounded">
                                                 <span className="font-medium text-xs text-coffee">{day.day}:</span>
-                                                <span className="text-xs text-gray-500">
+                                                <span className="text-xs text-textColor">
                                                         {day.slots.map(slot => `${slot.open} - ${slot.close}`).join(', ')}
                                                 </span>
                                         </div>
