@@ -5,6 +5,7 @@ import { InputContactus } from "../../Event/Event"
 import emailjs from '@emailjs/browser';
 import PartInputs from "../Shared/PartInputs/PartInputs";
 import { useRef } from 'react'
+import { useRouter } from 'next/router';
 interface ContactUsProps {
         Message: (value: boolean) => void;
         SuccessMessage: (value: boolean) => void;
@@ -12,7 +13,8 @@ interface ContactUsProps {
 }
 export default function PartContactUs(props: ContactUsProps) {
         const form: any = useRef();
-        const { register, handleSubmit, formState: { errors } } = useForm({
+        const router = useRouter();
+        const { register, handleSubmit, reset, formState: { errors } } = useForm({
                 resolver: yupResolver(ContactValidationSchema)
         });
         const onSubmit = async () => {
@@ -29,7 +31,9 @@ export default function PartContactUs(props: ContactUsProps) {
                         });
                 setTimeout(() => {
                         props.Message(false);
-                }, 5000);
+                }, 3000);
+                router.push("/");
+                reset();
         };
         return (
                 <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 mb-20">

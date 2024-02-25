@@ -37,7 +37,7 @@ export default function Navbar() {
                         <div className={`${isMobileMenuOpen ? 'block' : 'hidden'} mobile-menu`}>
                                 <ul className="px-5">
                                         {navbar.map((e, i) => (
-                                                <li className="py-2" key={i}><a href={e.Link} className="block text-sm px-2 py-4 text-linkColor hover:bg-ButtonHover transition duration-300">{e.name}</a></li>
+                                                <li className="py-2" key={i}><a href={e.Link} className="block text-sm px-2 py-4 text-linkColor hover:bg-ButtonHover hover:text-titleColor transition duration-300">{e.name}</a></li>
                                         ))}
                                 </ul>
                         </div>
