@@ -12,7 +12,7 @@ export const ContactValidationSchema = Yup.object().shape({
 });
 
 export const menuSchema = Yup.object().shape({
-  photo: Yup.string().url("URL معتبر نیست").required("مقداری وارد نشده"),
+  photo: Yup.string().url("URL معتبر نیست"),
   title: Yup.string().required("مقداری وارد نشده بود"),
   description: Yup.string().required("مقداری وارد نشد"),
   price: Yup.string().required("مقداری وارد نشد"),
