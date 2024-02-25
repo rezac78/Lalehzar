@@ -6,7 +6,8 @@ import HashTagBar from "@/components/HashTagBar/HashTagBar";
 import Navbar from "@/components/Navbar/Navbar";
 import SearchBar from "@/components/SearchBar/SearchBar";
 import { HashtagAllData, MenuAllData } from "@/services/MenuService";
-import { Menu, Hashtag } from "@/types/auth";
+import { GetWeekDate } from "@/services/SettingsService";
+import { Menu, Hashtag, OpeningHours } from "@/types/auth";
 import { GetServerSidePropsContext } from "next";
 import LoadingPage from '@/components/Shared/Loading/Loading';
 import useSearch from '@/hooks/useSearch';
@@ -14,6 +15,7 @@ interface MenuProps {
   menuData: Menu[];
   hashtagData: Hashtag[];
   wasSearched: boolean;
+  WeekData: OpeningHours;
 }
 export default function Home(props: MenuProps) {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,10 +30,11 @@ export default function Home(props: MenuProps) {
   if (isLoading) {
     return <LoadingPage />;
   }
+  console.log(props.WeekData)
   return (
     <div className="">
       <Navbar />
-      <BigLogo />
+      <BigLogo regularHours={props.WeekData.regularHours} />
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <HashTagBar Hashtag={filteredHashtags} />
       {filteredData.length === 0 ? (
@@ -41,7 +44,7 @@ export default function Home(props: MenuProps) {
       ) : (
         <CartSections Data={filteredData} Hashtag={filteredHashtags} />
       )}
-      <Footer />
+      <Footer WeekData={props.WeekData} />
     </div>
   );
 }
@@ -49,10 +52,11 @@ export const getServerSideProps = async (context: GetServerSidePropsContext) => 
   try {
     const hashtagData = await HashtagAllData();
     const menuData = await MenuAllData();
+    const WeekData = await GetWeekDate();
     if (!menuData) {
       throw new Error('Failed to fetch menu data');
     }
-    return { props: { menuData: menuData.data, hashtagData } };
+    return { props: { menuData: menuData.data, hashtagData, WeekData } };
   } catch (error) {
     const originalUrl = context.resolvedUrl;
     return {

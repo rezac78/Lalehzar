@@ -34,3 +34,12 @@ export const UpdateUserEmail = async (userData: any, token: string | null) => {
     return { message: "Failed to data" };
   }
 };
+export const GetWeekDate = async () => {
+  try {
+    const response = await axios.get(`/admin/opening-hours`);
+    return response.data;
+  } catch (error) {
+    console.error("Error data:", error);
+    return { message: "Failed to data" };
+  }
+};
