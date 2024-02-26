@@ -23,7 +23,7 @@ export default function Navbar() {
                                                 </div>
                                         </div>
                                         <div className="hidden md:flex items-center space-x-3 ">
-                                                <PartLink IdName={'PuzzlePieceIcon'}  Href={'#'} className="py-2 px-2 flex items-center">
+                                                <PartLink IdName={'PuzzlePieceIcon'}  Href={'/game'} className="py-2 px-2 flex items-center">
                                                         <PuzzlePieceIcon className="h-5 w-5 text-linkColor hover:text-ButtonHover" />
                                                 </PartLink>
                                         </div>
