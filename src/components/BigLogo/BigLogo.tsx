@@ -1,4 +1,4 @@
-import PartImage from "../Shared/PartImag/PartImage";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 interface BigLogoProps {
         regularHours: any;
@@ -37,7 +37,14 @@ export default function BigLogo(props: BigLogoProps) {
         return (
                 <div className="flex flex-col items-center justify-center my-10">
                         <div className="mb-2">
-                                <PartImage src="/Logo.png" width={150} height={150} />
+                                <Image
+                                        src="/Logo.png"
+                                        alt="Not Found"
+                                        width={150}
+                                        height={150}
+                                        className={`object-cover`}
+                                        priority
+                                />
                         </div>
                         <h1 className="text-xl font-bold text-titleColor mb-3">کافه لاله زار</h1>
                         <div className={`text-base font-semibold ${isOpen ? 'text-green-600' : 'text-red-600'}`}>
