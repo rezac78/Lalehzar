@@ -17,7 +17,6 @@ class MyDocument extends Document {
                                 <body>
                                         <Main />
                                         <NextScript />
-                                        <script src="/flappybird.js" defer></script>
                                 </body>
                         </Html>
                 );
